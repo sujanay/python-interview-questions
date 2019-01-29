@@ -1,7 +1,5 @@
 # dictionary of votes
-votes = ['sujan', 'jiya', 'sujan', 'sujan', 'jiya', 'sana', 'sana', 'sana', 'buda', 'buda', 'buda']
-
-def vote_counter():
+def election_winner(votes):
     """
         returns the vote count of each candidate
     """
@@ -15,7 +13,16 @@ def vote_counter():
             counter[vote]+= 1
         else: counter[vote] = 1
 
-    print(counter)
+    max_vote = max(counter.values())
+    max_counter = {}
 
-    return counter
+    for i in counter:
+        if counter[i] == max_vote: max_counter[i] = counter[i]
+    
+    return counter, sorted(max_counter.keys())[-1]
 
+election_votes = ['mary', 'bill', 'joe', 'bill', 'tim', 'joe', 'mary']
+
+counter, winner = election_winner(election_votes)
+print("Votes Count:", counter)
+print("Election Winner:", winner)
