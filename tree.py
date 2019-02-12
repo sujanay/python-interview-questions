@@ -38,20 +38,20 @@ def print_tree_postorder(root):
     print_tree_postorder(root.right)
     print(root.value, end = ' - ')
 
-if __name__ == '__main__':          #            Tree Structure
-    root = TreeNode(7)              #                 7
-    tree_insert(root, 4)            #               /    \
-    tree_insert(root, 5)            #             4       8
-    tree_insert(root, 8)            #          /    \       \
-    tree_insert(root, 9)            #         2      5       9
-    tree_insert(root, 2)            #          \
-    tree_insert(root, 3)            #           3
+if __name__ == '__main__':            #            Tree Structure
+    root = TreeNode(7)                #                 7
+    tree_insert(root, 4)              #               /    \
+    tree_insert(root, 5)              #             4       8
+    tree_insert(root, 8)              #          /    \       \
+    tree_insert(root, 9)              #         2      5       9
+    tree_insert(root, 2)              #          \
+    tree_insert(root, 3)              #           3
 
-    print("Inorder traversal")
-    print_tree_inorder(root)        # outputs: 7 - 4 - 2 - 3 - 5 - 8 - 9 -
+    print("Inorder traversal")        # Inorder(left, root, right)
+    print_tree_inorder(root)          # outputs: 2 - 3 - 4 - 5 - 7 - 8 - 9 -
    
-    print("\n\nPreorder traversal")
-    print_tree_preorder(root)       # outputs: 7 - 4 - 2 - 3 - 5 - 8 - 9 -
+    print("\n\nPreorder traversal")   # Preorder(root, left, right)
+    print_tree_preorder(root)         # outputs: 7 - 4 - 2 - 3 - 5 - 8 - 9 -
     
-    print("\n\nPostorder traversal")
-    print_tree_postorder(root)      # outputs: 3 - 2 - 5 - 4 - 9 - 8 - 7 -
+    print("\n\nPostorder traversal")  # Postorder(left, right, root)
+    print_tree_postorder(root)        # outputs: 3 - 2 - 5 - 4 - 9 - 8 - 7 -
